@@ -1,5 +1,7 @@
 import { Transform } from "node:stream";
 
+// pumpify, parallel-transform 모듈을 살펴볼 것
+
 export class LimitedParallelStream extends Transform {
   constructor(concurrency, userTransform, options) {
     super({
