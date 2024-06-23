@@ -8,18 +8,18 @@ export class ReplaceStream extends Transform {
     this.tail = "";
   }
 
-  _transform(chunk, encoding, cb) {
-    console.log(this.tail);
+  _transform(chunk, encoding, done) {
     const pieces = (this.tail + chunk).split(this.searchString); // [Hello W]
-    console.log("pieces", pieces);
     const lastPiece = pieces[pieces.length - 1]; // W
     const tailLen = this.searchString.length - 1; // 4
     this.tail = lastPiece.slice(-tailLen); //
     pieces[pieces.length - 1] = lastPiece.slice(0, -tailLen);
-    console.log("pieces", pieces);
     this.push(pieces.join(this.replaceString));
-    console.log("pieces.join(this.replaceString)", pieces.join(this.replaceString));
-    cb();
+    done();
+  }
+
+  _flush(done) {
+    done();
   }
 }
 
