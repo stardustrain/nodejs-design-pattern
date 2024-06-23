@@ -1,0 +1,23 @@
+{
+  "name": "node-design-pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.11",
+    "mkdirp": "^3.0.1"
+  },
+  "volta": {
+    "node": "20.14.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.1"
+  }
+}
